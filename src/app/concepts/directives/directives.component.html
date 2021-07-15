@@ -1,0 +1,199 @@
+<div class="container-fluid">
+  <div class="row text-justify">
+    <h4>Directives overview</h4>
+    <label>There are three kinds of directives in Angular:</label>
+    <ol type="1">
+      <li>Components—directives with a template.</li>
+      <li>Structural directives—change the DOM layout by adding and removing DOM elements.</li>
+      <li>Attribute directives—change the appearance or behavior of an element, component, or
+        another directive. It has a selector in brackets "[likethis]"</li>
+    </ol>
+  </div>
+  <div class="row-100"></div>
+  <div class="row text-justify">
+    <p>Components are the most common of the three directives.
+      You saw a component for the first time in the Getting Started.</p>
+    <p>Structural Directives change the structure of the view. Two examples are NgFor and NgIf.
+      Learn about them in the Structural Directives guide.</p>
+    <p>Attribute directives are used as attributes of elements.
+      The built-in NgStyle directive in the Template Syntax guide, for example,
+      can change several element styles at the same time.</p>
+  </div>
+  <div class="row-100"></div>
+  <h6>Components v/s Directives</h6>
+  <div class="row-100"></div>
+  <label>Components</label>
+  <div class="row-100"></div>
+  <div class="row text-justify">
+    <ol type='1'>
+      <li>To register a component we use @Component meta-data annotation.</li>
+      <li>Component is a directive which uses shadow DOM to create encapsulated visual behavior called components.
+        Components are typically used to create UI widgets.</li>
+      <li>Component is used to break up the application into smaller components.</li>
+      <li>Only one component can be present per DOM element.</li>
+      <li>@View decorator or templateurl template are mandatory in the component.</li>
+    </ol>
+  </div>
+  <div class="row-100"></div>
+  <label>Directives</label>
+  <div class="row-100"></div>
+  <div class="row text-justify">
+    <ol type='1'>
+      <li>To register directives we use @Directive meta-data annotation.</li>
+      <li>Directive is used to add behavior to an existing DOM element.</li>
+      <li>Directive is use to design re-usable components.</li>
+      <li>Many directives can be used per DOM element.</li>
+      <li>Directive doesn't use View.</li>
+    </ol>
+  </div>
+  <div class="row-100"></div>
+  <div class="row text-justify">
+    <label>Attribute Directives</label>
+    <div [ngStyle]="{'background-color':'green'}">NgStyle</div>
+    <div ngClass="main">ngClass</div>
+  </div>
+  <div class="row-100"></div>
+  <div class="row text-justify">
+    <label>Custom Attribute Directives</label>
+    <p highlight>Highlight Directives</p>
+
+    <h4>Pick a highlight color 1</h4>
+    <div>
+      <input type="radio" name="colors" (click)="color='lightgreen'">Green
+      <input type="radio" name="colors" (click)="color='yellow'">Yellow
+      <input type="radio" name="colors" (click)="color='cyan'">Cyan
+    </div>
+    <p [dynamicHighlight]="color">Highlight me!</p>
+
+    <h4>Pick a highlight color Better</h4>
+    <div>
+      <input type="radio" name="colors" (click)="color='lightgreen'">Green
+      <input type="radio" name="colors" (click)="color='yellow'">Yellow
+      <input type="radio" name="colors" (click)="color='cyan'">Cyan
+    </div>
+    <p [betterHighlight]="color">Highlight me! Better</p>
+  </div>
+  <div class="w-100"></div>
+  <div class="row text-justify">
+    <h4>Structural Directives</h4>
+    <p>Structural directives are responsible for HTML layout.
+      They shape or reshape the DOM's structure, typically by adding, removing,
+      or manipulating elements. As with other directives,
+      you apply a structural directive to a host element.
+      The directive then does whatever it's supposed to do with that host element and its
+      descendants.</p>
+    <h4>NgIf case study</h4>
+    <p>NgIf is the simplest structural directive and the easiest to understand.
+      It takes a boolean expression and makes an entire chunk of the DOM appear or disappear.</p>
+    <p *ngIf="isNgIf">
+      Expression is true and ngIf is true.
+      This paragraph is in the DOM.
+    </p>
+    <p *ngIf="isNgIf">
+      Expression is false and ngIf is false.
+      This paragraph is not in the DOM.
+    </p>
+  </div>
+  <div class="w-100"></div>
+  <h4>Inside *ngFor</h4>
+  <div class="row text-justify">
+    <p>List of heroes</p>
+    <span *ngFor="let hero of heroes; let i=index; trackBy: trackById">{{i}}{{hero.name}}</span>
+  </div>
+  <div class="w-100"></div>
+  <h4>NgSwitch</h4>
+  <div class="row text-justify">
+    <div *ngFor="let hero of heroes; let i=index; trackBy: trackById">
+      <div [ngSwitch]="hero?.emotion">
+        <span *ngSwitchCase="'happy'">{{hero.name}} happy</span>
+        <span *ngSwitchCase="'sad'">{{hero.name}} sad</span>
+        <span *ngSwitchCase="'confused'"> {{hero.name}} confused</span>
+        <span *ngSwitchDefault>{{hero.name}} default</span>
+      </div>
+    </div>
+  </div>
+  <div *ngIf="isLoggedIn; else loggedOut">
+    Welcome back, friend. <h6> Using ngIf; else </h6>
+  </div>
+
+  <ng-template #loggedOut>
+    Please friend, login. <h6>Using ngIf; else </h6>
+  </ng-template>
+
+  <div class="w-100"></div>
+  <h4>Write a structural directive</h4>
+  <div class="row text-justify">
+    <ul>
+      <li>Import the Directive decorator (instead of the Component decorator).</li>
+      <li>Import the Input, TemplateRef, and ViewContainerRef symbols;
+        you'll need them for any structural directive.</li>
+      <li>Apply the decorator to the directive class.</li>
+      <li>Set the CSS attribute selector that identifies the directive when applied
+        to an element in a template.</li>
+    </ul>
+    <p>To change DOM layout we should use TemplateRef and ViewContainerRef in our structural directive.
+      TemplateRef : It represents an embedded template that can be used to instantiate embedded views.
+      ViewContainerRef: It represents a container where one or more views can be attached.</p>
+    <label>Custom If</label>
+    <div>
+      <form>
+        <input type="radio" name="rad1" (click)="showCIf= true"> True
+        <input type="radio" name="rad1" (click)="showCIf= false"> False
+      </form>
+    </div>
+    <br />
+    <div *cIf="showCIf">
+      <b>Hello cpIf Directive.</b>
+    </div>
+    <ng-template [cIf]="!showCIf">
+      <div>
+        <b>Message not Available.</b>
+      </div>
+    </ng-template>
+    <label>Custom For</label>
+
+    <ul>
+      <li *cFor="5">
+        Hello World!
+      </li>
+    </ul>
+
+    <div>
+      Show message after
+      <input type="radio" name="rad2" (click)="showCpDelay= true; delayInSec = 2000"> 2 Seconds
+      <input type="radio" name="rad2" (click)="showCpDelay= true; delayInSec = 5000"> 5 Seconds
+      <input type="radio" name="rad2" (click)="showCpDelay= true; delayInSec = 7000"> 7 Seconds
+    </div>
+    <div *cIf="showCpDelay">
+      <div *cDelay="delayInSec">
+        <b> Hello cpDelay Directive. </b>
+      </div>
+    </div>
+  </div>
+  <div class="w-100">
+    <span [appShadow]="'hotpink'" [appShadowX]="'12px'" [appShadowY]="'6px'" [appShadowBlur]="'30px'">Alligator custom directive</span>
+  </div>
+  <div class="w-100">
+    <input type="text" (keypress)="onKP($event)" appShadow [inputto]="inpB" (afterinp)="outB($event)">
+    <span *ngIf="er">Error Message</span>
+  </div>
+  <div class="w-100"></div>
+  <h4>Combinig all Directives</h4>
+  <div>
+      Show Colors
+      <input type="radio" name="rad2" (click)="showCpDelay= true; delayInSec = 2000"> 2 Seconds
+      <input type="radio" name="rad2" (click)="showCpDelay= true; delayInSec = 5000"> 5 Seconds
+      <input type="radio" name="rad2" (click)="showCpDelay= true; delayInSec = 7000"> 7 Seconds
+  </div>
+  <div *cIf="showCpDelay">
+      <div *cDelay="delayInSec">
+          <h4>Pick a highlight color Better</h4>
+          <div>
+            <input type="radio" name="colors" (click)="color='lightgreen'">Green
+            <input type="radio" name="colors" (click)="color='yellow'">Yellow
+            <input type="radio" name="colors" (click)="color='cyan'">Cyan
+          </div>
+          <p [betterHighlight]="color">Highlight me! Better</p>
+      </div>
+    </div>
+</div>

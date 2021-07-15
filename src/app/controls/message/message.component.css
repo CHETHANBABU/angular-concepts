@@ -1,0 +1,64 @@
+.top-right{
+    position: fixed;
+    z-index: 1;
+    right: 2%;
+    top: 1%;
+    /*=== Trigger Animation  ===*/
+    -webkit-animation-duration: 1s; 
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    /*=== Optional Delays, change values here  ===*/
+    -webkit-animation-delay: 0.4s;
+    -moz-animation-delay: 0.4s;
+    animation-delay: 0.4s;
+}
+
+/*=== Trigger  ===*/
+.animate {
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+  }
+  
+  /*=== Optional Delays, change values here  ===*/
+  .one {
+  -webkit-animation-delay: 0.4s;
+  -moz-animation-delay: 0.4s;
+  animation-delay: 0.4s;
+  }
+    
+    /*==== FADE IN RIGHT ===*/
+    @-webkit-keyframes fadeInRight {
+      from {
+        opacity: 0;
+        -webkit-transform: translate3d(100%, 0, 0);
+        transform: translate3d(100%, 0, 0);
+      }
+    
+      to {
+        opacity: 1;
+        -webkit-transform: none;
+        transform: none;
+      }
+    }
+    @keyframes fadeInRight {
+      from {
+        opacity: 0;
+        -webkit-transform: translate3d(100%, 0, 0);
+        transform: translate3d(100%, 0, 0);
+      }
+    
+      to {
+        opacity: 1;
+        -webkit-transform: none;
+        transform: none;
+      }
+    }
+    
+    .fadeInRight {
+      -webkit-animation-name: fadeInRight;
+      animation-name: fadeInRight;
+    }
+    

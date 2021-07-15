@@ -1,0 +1,11 @@
+<div #container class="top-right" style="width:30vw;">
+    <div *ngFor="let m of value">
+      <div class="alert alert-dismissible mb-0" [ngClass]="m.type == 1 ? 'alert-danger' :
+                                                        m.type == 2 ? 'alert-success' :
+                                                        m.type == 3 ? 'alert-info' : 
+                                                        m.type == 4 ? 'alert-warning' : 'alert-primary'">
+        <button type="button" class="close" data-dismiss="alert">&times;</button>
+        {{m.message}}
+      </div>
+    </div>
+  </div>

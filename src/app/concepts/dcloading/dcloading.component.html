@@ -1,0 +1,28 @@
+<div class="container-fluid">
+  <div class="row text-justify">
+    <h6> Dynamic Component Loading</h6>
+    <p>Component templates are not always fixed. An application may need to load new components at runtime.
+        Dynamic components are reusable and make building large-scale applications easier. 
+        Injects ViewContainerRef to gain access to the view container of the element that will 
+        host the dynamically added component.</p>
+    <div class="row-100"></div>
+    <ul>
+      <li>Loads a new component by calling loadComponent()</li>
+      <li>After loadComponent(), it uses ComponentFactoryResolver to resolve a ComponentFactory for each 
+        specific component. The ComponentFactory then creates an instance of each component.</li>
+      <li>The viewContainerRef that exists on this specific instance of the component.</li>
+      <li>To add the component to the template, you call createComponent() on ViewContainerRef.</li>
+      <li>The createComponent() method returns a reference to the loaded component. 
+        Use that reference to interact with the component by assigning to its properties or calling its methods.</li>
+      <li>Generally, the Angular compiler generates a ComponentFactory for any component referenced in a template. 
+        However, there are no selector references in the templates for dynamically loaded components since they load at runtime.
+        To ensure that the compiler still generates a factory, 
+        add dynamically loaded components to the NgModule's entryComponents array</li>
+    </ul>
+    <c-host *ngIf='activeComponentType' [dataComponent]="activeComponentType"></c-host>   
+  </div>
+  <div class="row-100">
+    <app-view-c #viewC></app-view-c>
+    <button class="btn btn-primary" (click)="save()">Save</button>
+  </div>
+</div>

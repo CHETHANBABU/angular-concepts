@@ -1,0 +1,328 @@
+<div class="container-fluid">
+  <label for=""><strong>Badges</strong></label>
+  <div class="row-100"></div>
+  <div class="row">
+    <h6>Example heading <span class="badge badge-secondary">New</span></h6>
+    <button type="button" class="btn btn-primary">
+      Notifications <span class="badge badge-light">4</span>
+    </button>&nbsp;
+    <button type="button" class="btn btn-primary">
+      Profile <span class="badge badge-light">9</span>
+      <span class="sr-only">unread messages</span>
+    </button>
+  </div>
+  <div class="row-100"></div>
+  <div class="row">
+    <label for="">Contextual Variations</label>
+    <span class="badge badge-primary">Primary</span>
+    <span class="badge badge-secondary">Secondary</span>
+    <span class="badge badge-success">Success</span>
+    <span class="badge badge-danger">Danger</span>
+    <span class="badge badge-warning">Warning</span>
+    <span class="badge badge-info">Info</span>
+    <span class="badge badge-light">Light</span>
+    <span class="badge badge-dark">Dark</span>
+    <label for="">Pill Badges</label>
+    <span class="badge badge-pill badge-primary">Primary</span>
+    <span class="badge badge-pill badge-secondary">Secondary</span>
+    <span class="badge badge-pill badge-success">Success</span>
+    <span class="badge badge-pill badge-danger">Danger</span>
+    <span class="badge badge-pill badge-warning">Warning</span>
+    <span class="badge badge-pill badge-info">Info</span>
+    <span class="badge badge-pill badge-light">Light</span>
+    <span class="badge badge-pill badge-dark">Dark</span>
+  </div>
+  <div class="row-100"></div>
+  <label for=""><strong>Bread Crumbs</strong></label>
+  <p>Indicate the current page’s location within a
+    navigational hierarchy that automatically adds separators via CSS.</p>
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item active" aria-current="page">Home</li>
+    </ol>
+  </nav>
+
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="#">Home</a></li>
+      <li class="breadcrumb-item active" aria-current="page">Library</li>
+    </ol>
+  </nav>
+
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="#">Home</a></li>
+      <li class="breadcrumb-item"><a href="#">Library</a></li>
+      <li class="breadcrumb-item active" aria-current="page">Data</li>
+    </ol>
+  </nav>
+  <div class="row-100"></div>
+  <label for=""><strong>Card</strong></label>
+  <div class="card">
+    <div class="card-header">
+      Featured
+    </div>
+    <div class="card-body">
+      <h5 class="card-title">Special title treatment</h5>
+      <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+      <a href="#" class="btn btn-primary">Go somewhere</a>
+    </div>
+  </div>
+  <div class="row-100"></div>
+  <label for=""><strong>Collapse</strong></label>
+  <p>
+    <a class="btn btn-primary" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false"
+      aria-controls="collapseExample">
+      Link with href
+    </a>
+    <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false"
+      aria-controls="collapseExample">
+      Button with data-target
+    </button>
+  </p>
+  <div class="collapse" id="collapseExample">
+    <div class="card card-body">
+      Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim
+      keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
+    </div>
+  </div>
+  <div class="row-100"></div>
+  <label for=""><strong>Forms</strong></label>
+  <form>
+    <div class="form-group">
+      <label for="exampleInputEmail1">Email address</label>
+      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+      <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+    </div>
+    <div class="form-group">
+      <label for="exampleInputPassword1">Password</label>
+      <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+    </div>
+    <div class="form-group form-check">
+      <input type="checkbox" class="form-check-input" id="exampleCheck1">
+      <label class="form-check-label" for="exampleCheck1">Check me out</label>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+  <div class="row-100"></div>
+  <div class="card">
+    <div class="card-header">
+      <div class="d-inline text-primary font-weight-bold">
+        CREATE CI
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="flex-container">
+        <div class="content-box">
+          <form>
+            <div class="d-inline-flex w-100 form-group">
+              <label class="pt-2 w-25 justify-content-end">
+                <strong class="float-right mr-3">Name</strong>
+              </label>
+              <div class="w-100">
+                <input class="form-control ng-valid ng-dirty ng-touched w-100 m-auto" name="name" minlength="3"
+                  maxlength="100" pattern="^[a-zA-Z0-9_ ]*" required />
+              </div>
+            </div>
+            <div class="d-inline-flex w-100 form-group">
+              <label class="pt-2 w-25 justify-content-end">
+                <strong class="float-right mr-3">Description</strong>
+              </label>
+              <div class="w-100">
+                <textarea class="form-control ng-valid ng-dirty ng-touched w-100 m-auto" rows="2" name="description"
+                  required></textarea>
+              </div>
+            </div>
+            <div class="d-inline-flex w-100 form-group">
+              <label class="pt-2 w-25 justify-content-end">
+                <strong class="float-right mr-3">Rreporting Frequency</strong>
+              </label>
+              <div class="w-100">
+                <select class="form-control ng-valid ng-dirty ng-touched w-100 m-auto" name="frequencytype" required>
+                </select>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="flex-grow-1 mt-2">
+        <div class="float-right">
+          <button class="btn btn-primary" style="width: 6rem" [disabled]="!ciForm.valid" (click)='onSubmit()'>CREATE</button>
+          <button class="btn btn-primary ml-2" style="width: 6rem" (click)='cancel()'>CANCEL</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row-100"></div>
+  <label for=""><strong>Form Groups</strong></label>
+  <form>
+    <div class="form-group">
+      <label for="formGroupExampleInput">Example label</label>
+      <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Example input">
+    </div>
+    <div class="form-group">
+      <label for="formGroupExampleInput2">Another label</label>
+      <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Another input">
+    </div>
+  </form>
+  <div class="row-100"></div>
+  <label for=""><strong>Form Rows</strong></label>
+  <form>
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label for="inputEmail4">Email</label>
+        <input type="email" class="form-control" id="inputEmail4" placeholder="Email">
+      </div>
+      <div class="form-group col-md-6">
+        <label for="inputPassword4">Password</label>
+        <input type="password" class="form-control" id="inputPassword4" placeholder="Password">
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="inputAddress">Address</label>
+      <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+    </div>
+    <div class="form-group">
+      <label for="inputAddress2">Address 2</label>
+      <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
+    </div>
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label for="inputCity">City</label>
+        <input type="text" class="form-control" id="inputCity">
+      </div>
+      <div class="form-group col-md-4">
+        <label for="inputState">State</label>
+        <select id="inputState" class="form-control">
+          <option selected>Choose...</option>
+          <option>...</option>
+        </select>
+      </div>
+      <div class="form-group col-md-2">
+        <label for="inputZip">Zip</label>
+        <input type="text" class="form-control" id="inputZip">
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" id="gridCheck">
+        <label class="form-check-label" for="gridCheck">
+          Check me out
+        </label>
+      </div>
+    </div>
+    <button type="submit" class="btn btn-primary">Sign in</button>
+  </form>
+  <div class="row-100"></div>
+  <label for=""><strong>Horizantol Form</strong></label>
+  <form>
+    <div class="form-group row">
+      <label for="inputEmail3" class="col-sm-2 col-form-label">Email</label>
+      <div class="col-sm-10">
+        <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="inputPassword3" class="col-sm-2 col-form-label">Password</label>
+      <div class="col-sm-10">
+        <input type="password" class="form-control" id="inputPassword3" placeholder="Password">
+      </div>
+    </div>
+    <fieldset class="form-group">
+      <div class="row">
+        <legend class="col-form-label col-sm-2 pt-0">Radios</legend>
+        <div class="col-sm-10">
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1" checked>
+            <label class="form-check-label" for="gridRadios1">
+              First radio
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="option2">
+            <label class="form-check-label" for="gridRadios2">
+              Second radio
+            </label>
+          </div>
+          <div class="form-check disabled">
+            <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios3" value="option3" disabled>
+            <label class="form-check-label" for="gridRadios3">
+              Third disabled radio
+            </label>
+          </div>
+        </div>
+      </div>
+    </fieldset>
+    <div class="form-group row">
+      <div class="col-sm-2">Checkbox</div>
+      <div class="col-sm-10">
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" id="gridCheck1">
+          <label class="form-check-label" for="gridCheck1">
+            Example checkbox
+          </label>
+        </div>
+      </div>
+    </div>
+    <div class="form-group row">
+      <div class="col-sm-10">
+        <button type="submit" class="btn btn-primary">Sign in</button>
+      </div>
+    </div>
+  </form>
+  <div class="row-100"></div>
+  <label for=""><strong>File Browse</strong></label>
+  <div class="custom-file">
+    <input type="file" class="custom-file-input" id="customFile">
+    <label class="custom-file-label" for="customFile">Choose file</label>
+  </div>
+  <div class="row-100"></div>
+  <label for=""><strong>Jumborton</strong></label>
+  <div class="jumbotron jumbotron-fluid">
+    <div class="container">
+      <h1 class="display-4">Fluid jumbotron</h1>
+      <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
+    </div>
+  </div>
+  <div class="row-100"></div>
+  <label for=""><strong>Modal</strong></label>
+  <!-- Button trigger modal -->
+  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+    Launch demo modal
+  </button>
+
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          ...
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row-100"></div>
+  <label for=""><strong>Tooltip</strong></label>
+  <button type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="top" title="Tooltip on top">
+    Tooltip on top
+  </button>
+  <button type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="right" title="Tooltip on right">
+    Tooltip on right
+  </button>
+  <button type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="bottom" title="Tooltip on bottom">
+    Tooltip on bottom
+  </button>
+  <button type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="left" title="Tooltip on left">
+    Tooltip on left
+  </button>
+</div>

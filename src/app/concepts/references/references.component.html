@@ -1,0 +1,27 @@
+<div class="container-fluid">
+  <div class="row text-justify">
+    <h4>References Concepts</h4>
+  </div>
+  <div class="row-100"></div>
+  <p>Instead of two-way binding, we can easily fetch a value of any input through local references in Angular. 
+    Local references can be fetched directly from the component template and into the component typescript class. </p>
+  <div class="row">
+    <div class="col-6"><input type="text" class="form-control" #giftName /></div>
+    <div class="col-6"><button class="btn" (click)="onAddGift(giftName)">Add Gift</button></div>
+  </div>
+  <div class="row-100"></div>
+  <h6>View Child</h6>
+  <p>Property decorator that configures a view query. The change detector looks for the first element or 
+    the directive matching the selector in the view DOM. If the view DOM changes, 
+    and a new child matches the selector, the property is updated.</p>
+  <h6>Element Ref</h6>
+  <p>A wrapper around a native element inside of a View.</p>
+    <div class="row">
+      <div class="col-6"><input type="text" class="form-control" #lastName /></div>
+      <div class="col-6"><button class="btn" (click)="onLastName()">Last Name</button></div>
+    </div>
+  <div class="row-100"></div>
+  <p>ViewChild returns the first element that matches a given component, 
+    directive or template reference selector. In cases where you’d want to access multiple children, 
+    you’d use ViewChildren instead.</p>
+</div>

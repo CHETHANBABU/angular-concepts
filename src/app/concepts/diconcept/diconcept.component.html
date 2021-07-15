@@ -1,0 +1,87 @@
+<div class="container-fluid">
+  <div class="row text-justify">
+    <h4>Dependency Injection</h4>
+    <p>Dependency injection (DI), is an important application design pattern. 
+      Angular has its own DI framework, which is typically used in the design of 
+      Angular applications to increase their efficiency and modularity.
+      Dependencies are services or objects that a class needs to perform its function. 
+      DI is a coding pattern in which a class asks for dependencies from external sources 
+      rather than creating them itself.</p>
+    <div class="row-100"></div>
+    <p> This feature enables efficient re-use of code and instances thus making the programs more memory efficient 
+      and light weight, still at the cost of a few additional lines of code (CPU cycles). 
+      This could also in turn provide the programmer with the benefit of design patterns such as Singleton 
+      and Factory patterns without having to code them from scratch (We will discover how as we proceed). 
+      To conclude what is DI, it’s a mean by which we inject an instance of an object 
+      (called services in Angular 2) to another Object (mostly to a component) in order to have clean code 
+      and reusable code.</p>
+    <div class="row-100"></div>
+    <h6>Advantages of DI</h6>
+    <div class="row-100"></div>
+    <ul><li><label>Improved changeability</label>
+    <p>Since the object creation is taken away from the components that uses the object, 
+      we no longer worry about the object constructor. Which is great if we’re to work in large teams, 
+      which might bring continuous changes in to services and components, 
+      not for DI would require changes at both ends making it difficult to maintain code.</p></li>
+    <li><label>Cleaner code</label>
+    <p>Using DI makes the code cleaner. This is because we just have to mention the required object 
+      and reference name. Programmer can directly use the instance without having to worry about creating 
+      the code with a messy set of constructor parameters and so on.</p></li>
+    <li><label>Object Re-use</label>
+    <p>Most of the Angular 2 UI’s are interaction intensive and requires web requests to be sent often. 
+      The best example would be us typing in a text box with suggestions flowing seamlessly. 
+      If we are to initiate instances of a single service and keep sending requests there might be a race 
+      condition and can cause the TCP sockets to overwhelm. Also having concepts like ES7 Observables 
+      (Will be discussed in another blog post) which enables the components to observe services rather than 
+      update through call backs or promises, would not be useful if we are to replicate objects without a 
+      clear purpose.</p></li></ul>
+      <div class="row-100"></div>
+      <button (click)='sendMessage()' >Message</button>
+      <div class="w-100"></div>
+      <h6>Configure an injector with a service provider</h6>
+      <p>The class we have created provides a service. 
+        The @Injectable() decorator marks it as a service that can be injected, 
+        but Angular can't actually inject it anywhere until you configure an Angular dependency injector 
+        with a provider of that service.</p>
+      <p>You can configure injectors with providers at different levels of your app, 
+        by setting a metadata value in one of three places:</p>
+      <div class="w-100"></div>
+      <ul>
+        <li>In the @Injectable() decorator for the service itself.</li>
+        <li>In the @NgModule() decorator for an NgModule.</li>
+        <li>In the @Component() decorator for a component.</li>
+      </ul>
+      <div class="w-100"></div>
+      <p>The @Injectable() decorator has the providedIn metadata option, 
+        where you can specify the provider of the decorated service class with the root injector, 
+        or with the injector for a specific NgModule.</p>
+      <p>The @NgModule() and @Component() decorators have the providers metadata option, 
+        where you can configure providers for NgModule-level or component-level injectors.</p>
+      <div class="w-100"></div>
+      <p>When a component or service declares a dependency, the class constructor takes that dependency 
+        as a parameter. You can tell Angular that the dependency is optional by annotating the constructor 
+        parameter with @Optional().</p>
+      <div class="w-100"></div>
+      <h6>Hierarchical Dependency Injectors</h6>
+      <p>The Angular dependency injection system is hierarchical. 
+        There is a tree of injectors that parallel an app's component tree. 
+        You can reconfigure the injectors at any level of that component tree.</p>
+      <ul>
+        <li><label>@Injectable-level configuration</label>
+          <p>The @Injectable() decorator identifies every service class. 
+            The providedIn metadata option for a service class configures a specific injector (typically root) 
+            to use the decorated class as a provider of the service. 
+            When an injectable class provides its own service to the root injector, 
+            the service is available anywhere the class is imported.</p></li>
+        <li><label>@NgModule-level injectors</label>
+          <p>You can configure a provider at the module level using the providedIn metadata option for a 
+            non-root NgModule, in order to limit the scope of the provider to that module. 
+            This is the equivalent of specifying the non-root module in the @Injectable() metadata, 
+            except that the service provided this way is not tree-shakable.</p></li>
+        <li><label>@Component-level injectors</label>
+          <p>Individual components within an NgModule have their own injectors. 
+            You can limit the scope of a provider to a component and its children by configuring the provider 
+            at the component level using the @Component metadata.</p></li>
+      </ul>     
+  </div>
+</div>

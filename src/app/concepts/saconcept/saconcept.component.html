@@ -1,0 +1,54 @@
+<div class="container-fluid">
+  <div class="row text-justify">
+    <h4>String, Array, Object Concepts</h4>
+  </div>
+  <div class="row-100"></div>
+  <div class="row text-justify">
+    <h6>.map()</h6>
+    <p>The map() method creates a new array with the results of calling a function for every array element.
+      The map() method calls the provided function once for each element in an array, in order.      
+      Note: map() does not execute the function for array elements without values.
+      map() does not change the original array.</p>
+    <p>Return Value: An Array containing the results of calling the provided function for each element in the original array.</p>
+    <button class="btn" (click)="forMap()">Click to see Map Example in console</button>
+  </div>
+  <div class="row-100"></div>
+  <div class="row text-justify">
+    <h6>.join()</h6>
+    <p>The join() method joins the elements of an array into a string, and returns the string.
+      The elements will be separated by a specified separator. The default separator is comma (,).</p>
+    <p>Return Value: A String, representing the array values, separated by the specified separator.</p>
+    <button class="btn" (click)="forJoin()">Click to see Join Example in console</button>
+    <button class="btn" (click)="joinAndMap()">Click to see Map and Join Example in console</button>
+  </div>
+  <div class="row-100"></div>
+  <div class="row text-justify">
+    <h6>.filter()</h6>
+    <p>The filter() method creates an array filled with all array elements that pass a test (provided as a function).
+      Note: filter() does not execute the function for array elements without values. 
+      filter() does not change the original array.</p>
+    <p>Return Value: An Array containing all the array elements that pass the test. 
+      If no elements pass the test it returns an empty array.</p>
+    <button class="btn" (click)="forFilter()">Filter by condition</button>
+  </div>
+  <div class="row-100"></div>
+  <div class="row text-justify">
+    <h6>.find()</h6>
+    <p>The find() method returns the value of the first element in the array that satisfies the provided testing function.</p>
+    <button class="btn" (click)="forFind()" >Click to see Find Example in console</button>
+  </div>
+  <div class="row-100"></div>
+  <div class="row tex-justify">
+    <h6>.reduce()</h6>
+    <p>The reduce() method reduces the array to a single value.
+        The reduce() method executes a provided function for each value of the array (from left-to-right).     
+        The return value of the function is stored in an accumulator (result/total).        
+        Note: reduce() does not execute the function for array elements without values.</p>
+    <p>Return Value: Returns the accumulated result from the last call of the callback function.</p>
+    <button class="btn" (click)="forReduce()">Click to see Reduce Example in console</button>
+  </div>
+  <div class="row-100"></div>
+  <div class="row text-justify">
+    <button class="btn" (click)='forFilterC()' >Click to see filter Example in console</button>
+  </div>
+</div>

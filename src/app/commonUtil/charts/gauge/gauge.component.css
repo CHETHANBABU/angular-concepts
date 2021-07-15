@@ -1,0 +1,59 @@
+.verticalchart {
+    text-anchor: middle;
+    max-width: 195px;
+    margin: 0 auto;
+    display: block;
+    height: 156px;
+    position: relative;
+    bottom: 10px;
+}
+/* .svg-inline--fa{
+    margin: -16px !important;
+} */
+agm-map {
+    height: 523px;
+  }
+
+  
+  @media (min-width: 992px){
+    .col-md-4 {
+        width: 24% !important;
+    }
+    
+  } 
+
+/* 
+  .panel-heading{
+    height: 44px !important;
+    width: 259px !important;
+    background: #f40000;
+    color: white;
+    text-align: center;
+  } */
+ .h3, .h4, .h5, .h6, h4, h5, h6 {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 11px !important;
+    color:white !important;
+}
+
+.rectangle-red {
+	width: 15px;
+	height: 10px;
+	background: #FF0000;
+	margin-top: 3px;
+}
+
+.rectangle-orange{
+    width: 15px;
+	height: 10px;
+	background: #FF8C00;
+	margin-top: 3px;
+}
+
+.rectangle-green{
+    width: 15px;
+	height: 10px;
+	background: #008000;
+	margin-top: 3px;
+}

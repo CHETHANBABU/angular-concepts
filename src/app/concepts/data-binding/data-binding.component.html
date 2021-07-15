@@ -1,0 +1,80 @@
+<div class="container-fluid">
+  <div class="row text-justify">
+    <h4>String Interpolation</h4>&nbsp;
+    <p>Example: "{{ stringInterpolation }}" , We can call by using methods also "{{ getStringData() }}"</p>
+  </div>
+  <div class="w-100"></div>
+  <div class="row">
+    <h4>Data Binding</h4>
+    <div class="w-100"></div>
+    <p>Data binding is a mechanism for coordinating what users see, with application data values.
+      Binding types can be grouped into three categories distinguished by the direction of data flow:
+      from the source-to-view, from view-to-source, and in the two-way sequence: view-to-source-to-view</p>
+      <div class="w-100"></div>
+  </div>
+  <div class="w-100"></div>
+  <div class="row text-justify">
+    <h5>1) Property Binding</h5>
+    <p>one-way data binding because it flows a value in one direction, 
+      from a component's data property into a target element property. 
+      An element property between enclosing square brackets identifies the target property. </p>
+    <button class="btn btn-info" [disabled]="propertyDisable">Property Binding</button>
+    <div class="w-100"></div>
+    <h6>i. Attribute Binding</h6>
+    <button [attr.aria-label]="actionName">{{actionName}} with Aria</button>
+    <div class="w-100"></div>
+    <h6>ii. Class Binding</h6>
+    <div class="w-100"></div>
+    <h6>iii. Style Binding</h6>
+    <span [style.color]="isSpecial ? 'red': 'green'" 
+    [style.background-color]="isSpecial ? 'cyan': 'grey'"
+    [style.width]="isSpecial ? '150px': '100px'" >Style Binding</span>
+  </div>
+  <div class="w-100"></div>
+  <div class="row text-justify">
+    <h5>2) Event Binding</h5>
+    <p>The only way to know about a user action is to listen for certain events such as keystrokes, 
+      mouse movements, clicks, and touches</p>
+    <button class="btn btn-info" (click)="eventBinding()">{{ eventBindingEx }}</button>
+    <p>Another Example using keyStrokes: {{ inputKeyValue }}</p>
+    <input type="text" class="form-control" (input)="keyStrokes($event)"/>
+  </div>
+  <div class="w-100"></div>
+  <div class="row text-justify">
+    <h5>3) Data Binding [Two-way Binding]</h5>
+    <p>On the element side that takes a combination of setting a specific element property and
+       listening for an element change event. Angular offers a special two-way data binding syntax 
+       for this purpose, [(x)]. The [(x)] syntax combines the brackets of property binding, [x], 
+       with the parentheses of event binding, (x)</p>
+    <input type="text" class="form-control" [(ngModel)]="twoWayBind"/>
+    <p>Example for Two-way Binding: {{ twoWayBind }}</p>
+  </div>
+  <div class="w-100"></div>
+  <div class="row text-justify">
+    <h3>User Input</h3>
+    <p>User actions such as clicking a link, pushing a button, and entering text raise DOM events.</p>
+    <label>Key event filtering (with key.enter)</label>
+    <p>The (keyup) event handler hears every keystroke. Sometimes only the Enter key matters, 
+      because it signals that the user has finished typing. 
+      One way to reduce the noise would be to examine every $event.
+      keyCode and take action only when the key is Enter {{value}}</p>
+    <input #box (keyup.enter)="onEnter(box.value)">    
+  </div>
+  <div class="row text-justify">
+    <h3>Custom events with EventEmitter</h3>
+    <p>Directives typically raise custom events with an Angular EventEmitter. 
+      The directive creates an EventEmitter and exposes it as a property. 
+      The directive calls EventEmitter.emit(payload) to fire an event, passing in a message payload, 
+      which can be anything. Parent directives listen for the event by binding to this property and 
+      accessing the payload through the $event object.</p>
+      <customdropdown [sendData]='inputData' (emitDropValue)='dropDownValue($event)'></customdropdown>
+  </div>
+  <div class="w-100"></div>
+    <stackbar *ngIf='stackBarInput' [stackBarData]='stackBarInput'></stackbar>
+  <div class="w-100"></div>
+  <gauge *ngIf='gaugeInput' [gaugeData]='gaugeInput'></gauge>
+  <div class="row-100">
+    Using public_api charts module
+      <c-stacked *ngIf='stackBarInput' [stackBarData]='stackBarInput'></c-stacked>
+  </div>
+</div>

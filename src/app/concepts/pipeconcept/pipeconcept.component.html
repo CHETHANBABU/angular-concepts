@@ -1,0 +1,46 @@
+<div class="container-fluid">
+  <div class="row text-justify">
+    <h4>Pipe Concepts</h4>
+  </div>
+  <div class="row-100"></div>
+  <div class="row text-justify">
+    <p>Every application starts out with what seems like a simple task: get data, transform them, and show them to users.
+        A pipe takes in data as input and transforms it to a desired output.Angular comes with a stock of pipes such as DatePipe, 
+        UpperCasePipe, LowerCasePipe, CurrencyPipe, and PercentPipe. They are all available for use in any template.</p>
+  </div>
+  <div class="row-100"></div>
+  <div class="row text-justify">
+    <h6>Parameterizing a pipe</h6>
+    <p>A pipe can accept any number of optional parameters to fine-tune its output. To add parameters to a pipe, 
+      follow the pipe name with a colon ( : ) and then the parameter value (such as currency:'EUR'). 
+      If the pipe accepts multiple parameters, separate the values with colons (such as slice:1:5)</p>
+    Example: formatfullDate {{ birthday | date:formatfullDate  }}
+    Example: formatshortDate {{ birthday | date:formatshortDate  }}
+  </div>
+  <div class="row-100"></div>
+  <div class="row text-justify">
+    <h6>Custom pipes</h6>
+    <ul>
+        <li>A pipe is a class decorated with pipe metadata.</li>
+        <li>The pipe class implements the PipeTransform interface's transform method that accepts 
+          an input value followed by optional parameters and returns the transformed value.</li>
+        <li>There will be one additional argument to the transform method for each parameter passed to the pipe. 
+          Your pipe has one such parameter: the exponent.</li>
+        <li>To tell Angular that this is a pipe, you apply the @Pipe decorator, 
+          which you import from the core Angular library.</li>
+        <li>The @Pipe decorator allows you to define the pipe name that you'll use within template expressions. 
+          It must be a valid JavaScript identifier. Your pipe's name is exponentialStrength.</li>
+      </ul>
+  </div>
+  <div class="row-100"></div>
+  <div class="row text-justify">
+    <h2>Power Boost Calculator</h2>
+    <div>Normal power: <input [(ngModel)]="power"></div>
+    <div>Boost factor: <input [(ngModel)]="factor"></div>
+    <p>
+      Super Hero Power: {{power | exponentialStrength: factor}}
+    </p>
+  </div>
+  <div class="row-100"></div>
+  <div><input type="text" [(ngModel)]='splitText'>{{splitText | pipeRegex :to :expr :script :arg }}</div>
+</div>
